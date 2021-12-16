@@ -34,9 +34,11 @@ def A(x, y, t, i, n):
     return A
 
 def property(x, y, t, n):
-    pr = 1
+    pr = 0
     for j in range(n):
         pr = pr + A(x, y, x[j], j, n) / (t - x[j])
+    pr = pr*omega(x, y, t, n)
+    print(pr)
     return pr
 
 def lagranz(x, y, t, n):
@@ -74,7 +76,6 @@ if (ier==0):
     y4=float(input())
     y = [y1, y2, y3, y4]
 
-if (ier==0):
     xy = nearest_x(x, y, xx)
     x = [1, 2, 3]
     y = [1, 2, 3]
