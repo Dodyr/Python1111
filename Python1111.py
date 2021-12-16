@@ -1,29 +1,3 @@
-import numpy as np
-import matplotlib.pyplot as plt
-print("Степень интерполяционного многочлена Лагранжа - 2")
-print("количество узлов для функции f = 4")
-print("Введите x1, x2, x3, x4 ")
-x1=float(input())
-x2=float(input())
-x3=float(input())
-x4=float(input())
-ier = 0
-x = [x1, x2, x3, x4]
-
-for i in range(1, 4):
-    for j in range(1, 4):
-        if ((x[i-1]==x[i]) and not i==j):
-            ier=1
-            break
-if (ier==0): 
-    print("Введите точку x*")
-    xx=float(input())
-    print("Введите y1, y2, y3, y4 ")
-    y1=float(input())
-    y2=float(input())
-    y3=float(input())
-    y4=float(input())
-    y = [y1, y2, y3, y4]
 
 def nearest_x(x, y, xx):
     xy123 = [1, 2, 3, 4, 5, 6]
@@ -72,15 +46,45 @@ def lagranz(x, y, t, n):
     z = z*omega(x, y, t, n)
     z = z/property(x, y, t, n)
     return z
+
+
+print("Степень интерполяционного многочлена Лагранжа - 2")
+print("количество узлов для функции f = 4")
+print("Введите x1, x2, x3, x4 ")
+x1=float(input())
+x2=float(input())
+x3=float(input())
+x4=float(input())
+ier = 0
+x = [x1, x2, x3, x4]
+
+for i in range(1, 4):
+    for j in range(1, 4):
+        if ((x[i-1]==x[i]) and not i==j):
+            ier=1
+            break
+        
+if (ier==0): 
+    print("Введите точку x*")
+    xx=float(input())
+    print("Введите y1, y2, y3, y4 ")
+    y1=float(input())
+    y2=float(input())
+    y3=float(input())
+    y4=float(input())
+    y = [y1, y2, y3, y4]
+
 if (ier==0):
     xy = nearest_x(x, y, xx)
     x = [1, 2, 3]
     y = [1, 2, 3]
     j = 0
+
     for i in range(0, 5, 2):
         x[j] = xy[i]
         j = j + 1
     j = 0
+
     for i in range(1, 6, 2):
         y[j] = xy[i]
         j = j + 1
