@@ -38,7 +38,6 @@ def property(x, y, t, n):
     for j in range(n):
         pr = pr + A(x, y, x[j], j, n) / (t - x[j])
     pr = pr*omega(x, y, t, n)
-    print(pr)
     return pr
 
 def lagranz(x, y, t, n):
